@@ -1,6 +1,8 @@
 export const resolvers = {
   Query: {
-    events(args) {
+    events(args, context) {
+      console.log(context);
+
       return [
         {
           id: "asfd",

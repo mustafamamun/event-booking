@@ -24,3 +24,12 @@ export const EventDetails = `type EventDetails {
   dateFrom: String
   userDetails : UserDetails
 }`;
+
+export const Success = `type Success {
+  message: String
+}`;
+
+export const LoginSuccess = `type LoginSuccess {
+  message: String
+  token: String
+}`;

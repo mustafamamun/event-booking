@@ -6,7 +6,7 @@ import {
   UserDetails
 } from "../../../types/types";
 export const typeDefs = gql`
-  type Query {
+  extend type Query {
     events(eventsQuery: EventsQuery): [Event!]!
     event(id: String): EventDetails
   }

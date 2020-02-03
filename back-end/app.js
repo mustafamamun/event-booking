@@ -2,27 +2,16 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import cors from "cors";
 import Events from "./modules/events";
-
-const server = new ApolloServer({ modules: [Events] });
+import Login from "./modules/login";
+import "./db";
+import { corsConfig } from "./utils/config/app-config";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-    methods: ["PUT", "POST", "GET", "DELETE", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Content-Length",
-      "Authorization",
-      "Accept",
-      "X-Requested-With",
-      "x-access-token"
-    ]
-  })
-);
+app.use(cors(corsConfig));
+
+const server = new ApolloServer({ modules: [Events, Login] });
 server.applyMiddleware({ app });
 
 app.listen({ port: 4000 }, () =>
