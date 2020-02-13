@@ -27,6 +27,7 @@ export const EventDetails = `type EventDetails {
 
 export const Success = `type Success {
   message: String
+  status: String
 }`;
 
 export const LoginSuccess = `type LoginSuccess {
