@@ -4,8 +4,6 @@ import ApplicationError from '../../../utils/Error/ApplicationError';
 export const resolvers = {
   Query: {
     login: async (_, args, context) => {
-      console.log(args);
-
       try {
         const success = await loginUser(args);
         return success;
