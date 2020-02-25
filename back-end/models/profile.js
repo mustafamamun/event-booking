@@ -15,6 +15,7 @@ export default class profile extends BaseModel {
       properties: {
         id: { type: 'string' },
         user_id: { type: 'string', maxLength: 50 },
+        email: { type: 'string', maxLength: 50 },
         first_name: { type: 'string', maxLength: 10 },
         last_name: { type: 'string', maxLength: 100 },
         image: { type: 'string' }

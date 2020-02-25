@@ -1,5 +1,6 @@
 import uuid from 'uuid';
 import Profile from '../models/profile';
+import { isEmpty } from 'lodash';
 
 export const upSertSocialMediaUser = async user => {
   try {
@@ -10,14 +11,12 @@ export const upSertSocialMediaUser = async user => {
       dbUser.lastName !== user.lastName
     ) {
       const id = uuid.v4();
-      const user_id = uuid.v4();
       await insertProfile({
         id,
-        user_id,
         ...user
       });
     }
-    return { email: user.email, user_id: user_id };
+    return { email: user.email, user_id: user.user_id };
   } catch (error) {
     console.log(error);
     throw new Error('Internal server error');

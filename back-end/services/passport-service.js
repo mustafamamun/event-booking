@@ -1,10 +1,8 @@
-import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
+import uuid from 'uuid';
 import TwitterTokenStrategy from 'passport-twitter-token';
 import { Strategy as GoogleTokenStrategy } from 'passport-google-token';
 import FacebookTokenStrategy from 'passport-facebook-token';
 import { upSertSocialMediaUser } from '../query/profile';
-
-import Login from '../models/login';
 import {
   facebook_id,
   facebook_secret,
@@ -26,6 +24,7 @@ module.exports = passport => {
         try {
           const userDetails = {
             email: profile._json.email,
+            user_id: uuid.v4(),
             firstName: profile._json.name
           };
           const user = await upSertSocialMediaUser(userDetails);
@@ -46,6 +45,7 @@ module.exports = passport => {
       async (accessToken, refreshToken, profile, done) => {
         const userDetails = {
           email: profile._json.email,
+          user_id: uuid.v4(),
           firstName: profile._json.given_name,
           lastName: profile._json.family_name
         };
@@ -67,6 +67,7 @@ module.exports = passport => {
       async (accessToken, refreshToken, profile, done) => {
         const userDetails = {
           email: profile._json.email,
+          user_id: uuid.v4(),
           firstName: profile._json.first_name,
           lastName: profile._json.last_name
         };

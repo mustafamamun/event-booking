@@ -10,6 +10,8 @@ export const verifyToken = token => {
 };
 
 export const socialAuthTokenGenerator = async (req, res) => {
+  console.log('in');
+
   if (!req.user) {
     res.status(401).json({ message: 'User Not Authenticated' });
   }

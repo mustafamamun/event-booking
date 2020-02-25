@@ -5,6 +5,7 @@ exports.up = async knex => {
     await knex.schema.createTable('profile', table => {
       table.string('id').notNull();
       table.string('user_id', 50).notNull();
+      table.string('email', 50).notNull();
       table.string('first_name', 100).notNull();
       table.string('last_name', 100).nullable();
       table.binary('image').nullable();
