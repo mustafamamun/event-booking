@@ -1,0 +1,18 @@
+.facebook-btn {
+  margin: 0 0 0 5px;
+  padding: 3px 10px 3px 10px;
+  border-radius: 4px;
+  border: 1px solid #16a2b8;
+  background-color: transparent;
+}
+
+.facebook-btn:hover {
+  background-color: #16a2b8;
+}
+.facebook-btn:hover .facebook-icon {
+  color: white;
+}
+
+.facebook-icon {
+  color: #16a2b8;
+}

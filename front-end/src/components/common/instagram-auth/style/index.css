@@ -1,0 +1,18 @@
+.instagram-btn {
+  margin: 0 0 0 5px;
+  padding: 3px 10px 3px 10px;
+  border-radius: 4px;
+  border: 1px solid #16a2b8;
+  background-color: transparent;
+}
+
+.instagram-btn:hover {
+  background-color: #16a2b8;
+}
+.instagram-btn:hover .instagram-icon {
+  color: white;
+}
+
+.instagram-icon {
+  color: #16a2b8;
+}

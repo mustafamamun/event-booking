@@ -1,0 +1,19 @@
+.twitter-btn {
+  border: 1px solid #16a2b8;
+  margin-left: 4px;
+  padding: 0px 8px 1px 8px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+}
+
+.twitter-btn:hover {
+  background-color: #16a2b8;
+}
+
+.twitter-btn:hover .twitter-icon {
+  color: white;
+}
+.twitter-icon {
+  color: #16a2b8;
+}

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GenericButton from '../common/button/Button';
+import GoogleLogin from '../common/google-auth/Google';
+import FacebookLogin from '../common/facebook-auth/Facebook';
+import Instagram from '../common/instagram-auth/Instagram';
+import Twitter from '../common/twitter-auth/Twitter';
 
-const Overlay: React.FC = () => {
+const Overlay: React.FC<any> = () => {
   return (
     <div>
       <div className="text-center overlay">
@@ -25,6 +29,12 @@ const Overlay: React.FC = () => {
             text="Sign up"
           />
         </Link>
+        <div className={'mt-4'}>
+          <GoogleLogin />
+          <FacebookLogin />
+          <Instagram />
+          <Twitter />
+        </div>
       </div>
     </div>
   );
